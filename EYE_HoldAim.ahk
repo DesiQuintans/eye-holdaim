@@ -3,12 +3,7 @@
 ; Author:			Desi Quintans <me@desiquintans.com>
 ; Website:			http://www.desiquintans.com/eyeaim
 ; 
-; The full readme and changelog are available at http://www.desiquintans.com/eyeaim.
-; 
-; USAGE:
-;	A compiled executable version is available at the URL above.
-;	Alternatively, install Autohotkey <https://www.autohotkey.com/> 
-;   and run this script.
+; The full readme and changelog are available at https://github.com/DesiQuintans/eye-holdaim
 
 
 #NoEnv
@@ -21,7 +16,7 @@ SetTitleMatchMode, 1
 
 ; How long (in milliseconds) should the Right Mouse be held down for it to be
 ; detected as a button-hold and not a button-tap? 
-; The default value of 116 is the upper average of 200 of my own button-taps. 
+; The default value of 115 is the upper 95 % CI of 200 of my own mouse-taps. 
 ; You might try a larger number like 156 (95 % of my button-taps were 156 ms 
 ; or faster) or 171 (99 % of my taps were 171 ms or faster).
 ; DEFAULT:    hold_threshold := 116
@@ -48,15 +43,18 @@ SetTimer, Reset_Aim_Mode, %sync_interval%
 
 #IfWinActive, ahk_exe EYE.exe
 {
-    *RButton::Press_Key("/", in_aim_mode, "RButton", hold_threshold)
-    *RButton Up::Release_Key("/", in_aim_mode)
+    ~$^RButton::Press_Key("^{RButton}", in_aim_mode, "RButton", hold_threshold)
+    ~$^RButton Up::Release_Key("^{RButton}", in_aim_mode)
+    
+    ~$RButton::Press_Key("{RButton}", in_aim_mode, "RButton", hold_threshold)
+    ~$RButton Up::Release_Key("{RButton}", in_aim_mode)
 }
 
 Press_Key(target_key, ByRef aiming, trigger_key, hold_time) 
 {
     if (aiming == FALSE)
     {
-        Send {%target_key%}
+        Send %target_key%
     }
     
     Sleep, hold_time
@@ -71,7 +69,7 @@ Release_Key(target_key, ByRef aiming)
 {
     if (aiming == TRUE)
     {
-        Send {%target_key%}
+        Send %target_key%
     }
     
     aiming := FALSE
