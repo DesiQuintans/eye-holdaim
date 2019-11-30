@@ -13,7 +13,7 @@ The script does this by differentiating between taps and holds, so you can still
 
 Download the newest release from [the Releases section](https://github.com/DesiQuintans/eye-holdaim/releases). You can put the files anywhere you like.
 
-Run `EYE_Hold-to-aim.exe` before running EYE Divine Cybermancy. The script works with the default binding of Right Mouse to Aim/Parry/Alt Fire.
+Run `EYE_Hold-to-aim.exe` before running EYE Divine Cybermancy. **The script works with the default binding of Right Mouse to Aim/Parry/Alt Fire.**
 
 _Fair warning:_ Scanning the executable with [VirusTotal](https://www.virustotal.com) raises warnings in 3 out of 69 anti-virus engines. These are, IMO, false positives caused by the file being new. 
 
@@ -23,7 +23,7 @@ If you would prefer to run an uncompiled script, then you can install [Autohotke
 
 ## Note about dropped inputs
 
-The game itself has a lot of jank with regards to aiming, and it becomes more noticeable since this script gives you fluid hold-to-aim controls. Sometimes you may find that you don't go into aim mode even if you've pressed Right Mouse down. This is not my script's fault, it's actually the game dropping inputs. You can confirm this yourself by rapidly tapping the aim button (whether it is bound to "/" or bound to "Right Mouse") and seeing that the game has a mind of its own.
+The game itself has a lot of jank with regards to aiming, and it becomes more noticeable now that this script gives you fluid hold-to-aim controls. Sometimes you may find that you don't go into aim mode even if you've pressed Right Mouse down. This is not my script's fault, it's actually the game dropping inputs. You can confirm this yourself by rapidly tapping the Aim button when the script is not running and seeing that the game ignores new inputs while the transitional animations are playing. 
 
 
 
