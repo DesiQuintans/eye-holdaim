@@ -15,6 +15,8 @@ The script does this by differentiating between taps and holds, so you can still
 
 This script will not work unless you rebind Aim to `/`. The script takes control of Right Mouse and uses it to send `/` keystrokes instead.
 
+Download the newest release from [the Releases section](https://github.com/DesiQuintans/eye-holdaim/releases). You can put the files anywhere you like.
+
 Run `EYE_Hold-to-aim.exe` before running EYE Divine Cybermancy. 
 
 _Fair warning:_ Scanning the executable with [VirusTotal](https://www.virustotal.com) raises warnings in 3 out of 69 anti-virus engines. These are, IMO, false positives caused by the file being new. 
